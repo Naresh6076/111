@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>APDCL Dashboard</title>
   <style>
@@ -51,7 +51,7 @@
       padding: 10px;
       border-radius: 5px;
       border: none;
-      min-width: 160px;
+      min-width: 180px;
       background-color: white;
       color: #003366;
       font-weight: bold;
@@ -99,8 +99,8 @@
   <div class="header">
     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Assam_Power_Distribution_Company_Limited_Logo.svg/1200px-Assam_Power_Distribution_Company_Limited_Logo.svg.png" alt="APDCL Logo">
     <div class="header-text">
-      <span>??? ????? ????? ???????? ???????</span>
-      <span>??? ?????? ??????? ????? ??? ???????? ????????</span>
+      <span>অসম শক্তি বিতৰণ কোম্পানী লিমিটেড</span>
+      <span>অসম চৰকাৰৰ ৰাজহুৱা খণ্ডৰ এটি পৰিসীমিত কোম্পানী</span>
       <span class="title">ASSAM POWER DISTRIBUTION COMPANY LIMITED</span>
       <span>A Govt. of Assam Public Limited Company</span>
     </div>
@@ -108,7 +108,11 @@
 
   <!-- Dropdown Navigation -->
   <div class="navbar">
-    <select><option disabled selected>Outage Analytics</option></select>
+    <select onchange="handleDropdown(this)">
+      <option disabled selected>Outage Analytics</option>
+      <option value="sas">View Outage Report</option>
+    </select>
+
     <select><option disabled selected>Fraud Analytics</option></select>
     <select><option disabled selected>CRM</option></select>
     <select><option disabled selected>Option 4</option></select>
@@ -125,145 +129,25 @@
   <!-- Footer -->
   <div class="footer">
     <strong>Connect with us</strong><br>
-    1912 or 0361�3126201 / 0361-2803200<br>
+    1912 or 0361–3126201 / 0361-2803200<br>
     <a href="mailto:feedback.apdcl@apdcl.org">feedback.apdcl@apdcl.org</a><br>
-    � 2021 Assam Power Distribution Company Limited (CIN: U40109AS2003SGC007242)<br>
+    © 2021 Assam Power Distribution Company Limited (CIN: U40109AS2003SGC007242)<br>
     Site Developed & Maintained by IT Cell, APDCL
   </div>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>APDCL Dashboard</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f0f4f8;
-    }
-
-    /* Header */
-    .header {
-      display: flex;
-      align-items: center;
-      background-color: #003366; /* Blue */
-      color: white;
-      padding: 20px;
-      flex-wrap: wrap;
-    }
-
-    .header img {
-      height: 70px;
-      margin-right: 20px;
-    }
-
-    .header-text span {
-      display: block;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .header-text .title {
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    /* Navbar */
-    .navbar {
-      background-color: #ff6600; /* Orange */
-      padding: 15px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .navbar select {
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-      min-width: 160px;
-      background-color: white;
-      color: #003366;
-      font-weight: bold;
-    }
-
-    /* Footer */
-    .footer {
-      background-color: #003366;
-      color: white;
-      padding: 20px;
-      font-size: 13px;
-      text-align: right;
-    }
-
-    .footer a {
-      color: #ffa500;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
+  <!-- JavaScript to handle dropdown redirect -->
+  <script>
+    function handleDropdown(select) {
+      const value = select.value;
+      if (value === "sas") {
+        window.open(
+          "https://analytics.apdcl.org/SASVisualAnalytics/?reportUri=/reports/reports/7c884b2f-02d2-4a49-830f-818c8cfefb3d&page=vi38",
+          "_blank"
+        );
       }
-
-      .navbar {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .footer {
-        text-align: center;
-      }
+      select.selectedIndex = 0; // reset dropdown
     }
-  </style>
-</head>
-<body>
-
-  <!-- Header -->
-  <div class="header">
-    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Assam_Power_Distribution_Company_Limited_Logo.svg/1200px-Assam_Power_Distribution_Company_Limited_Logo.svg.png" alt="APDCL Logo">
-    <div class="header-text">
-      <span>??? ????? ????? ???????? ???????</span>
-      <span>??? ?????? ??????? ????? ??? ???????? ????????</span>
-      <span class="title">ASSAM POWER DISTRIBUTION COMPANY LIMITED</span>
-      <span>A Govt. of Assam Public Limited Company</span>
-    </div>
-  </div>
-
-  <!-- Dropdown Navigation -->
-  <div class="navbar">
-    <select><option disabled selected>Outage Analytics</option></select>
-    <select><option disabled selected>Fraud Analytics</option></select>
-    <select><option disabled selected>CRM</option></select>
-    <select><option disabled selected>Option 4</option></select>
-    <select><option disabled selected>Option 5</option></select>
-    <select><option disabled selected>Option 6</option></select>
-    <select><option disabled selected>Option 7</option></select>
-    <select><option disabled selected>Option 8</option></select>
-    <select><option disabled selected>Option 9</option></select>
-    <select><option disabled selected>Option 10</option></select>
-    <select><option disabled selected>Option 11</option></select>
-    <select><option disabled selected>Option 12</option></select>
-  </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    <strong>Connect with us</strong><br>
-    1912 or 0361�3126201 / 0361-2803200<br>
-    <a href="mailto:feedback.apdcl@apdcl.org">feedback.apdcl@apdcl.org</a><br>
-    � 2021 Assam Power Distribution Company Limited (CIN: U40109AS2003SGC007242)<br>
-    Site Developed & Maintained by IT Cell, APDCL
-  </div>
+  </script>
 
 </body>
 </html>
